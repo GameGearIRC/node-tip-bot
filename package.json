@@ -1,0 +1,46 @@
+{
+  "name": "node-pimp-bot",
+  "version": "1.0.1",
+  "description": "node.js based tipping bot for pimpcash",
+  "main": "bin/tipbot",
+  "dependencies": {
+    "irc": "~0.3.6",
+    "js-yaml": "~3.2.2",
+    "winston": "~0.8.1",
+    "node-altcoin": "0.1.2",
+    "swig": "^1.3.2",
+    "express": "3.4.8",
+    "node-tipbot-api": "0.0.5",
+    "request": "2.45.0",
+    "node-regexp": "0.1.1",
+    "cheerio": "0.17.0",
+    "githubhook": "1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/tipbot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pimpcashdev/node-pimp-bot"
+  },
+  "author": "upgradeadvice - forked from https://github.com/upgradeadvice/node-tip-bot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pimpcashdev/node-pimp-bot/issues"
+  },
+  "homepage": "https://github.com/pimpcashdev/node-pimp-bot",
+  "keywords": [
+    "altcoin",
+    "pimpcash",
+    "mue",
+    "node",
+    "tip",
+    "tipbot",
+    "irc",
+    "rpc",
+    "ticker",
+    "bot"
+  ]
+}
