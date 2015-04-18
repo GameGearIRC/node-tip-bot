@@ -325,7 +325,7 @@ client.addListener('message', function(from, channel, message) {
 
                 coin.getBalance(from.toLowerCase(), settings.coin.min_confirmations, function(err, balance) {
                     if (err) {
-                        winston.error('Error in !pimp command.', err);
+                        winston.error('Error in !tip command.', err);
                         client.say(channel, settings.messages.error.expand({
                             name: from
                         }));
@@ -369,7 +369,7 @@ client.addListener('message', function(from, channel, message) {
                                 coin.move(from.toLowerCase(), names[i].toLowerCase(), amount / max, function(err, reply) {
                                 	if(i == names.length) locks[from.toLowerCase()] = null;
                                 	if (err || !reply) {
-                                        winston.error('Error in !pimp command', err);
+                                        winston.error('Error in !tip command', err);
                                         return;
                                     }
                                 });
@@ -382,7 +382,7 @@ client.addListener('message', function(from, channel, message) {
                             }));
                         });
                     } else {
-                        winston.info('%s tried to pimp %s %d, but has only %d', from, to, amount, balance);
+                        winston.info('%s tried to tip %s %d, but has only %d', from, to, amount, balance);
                         client.say(channel, settings.messages.no_funds.expand({
                             name: from,
                             balance: balance,
@@ -621,10 +621,10 @@ client.addListener('message', function(from, channel, message) {
                 }
                 break;
 
-            case 'pimp':
-                var match = message.match(/^.?pimp (\S+) ([\d\.]+)/);
+            case 'tip':
+                var match = message.match(/^.?tip (\S+) ([\d\.]+)/);
                 if (match === null || match.length < 3) {
-                    client.say(channel, 'Usage: !pimp <nickname> <amount>');
+                    client.say(channel, 'Usage: !tip <nickname> <amount>');
                     return;
                 }
                 var to = match[1];
@@ -663,7 +663,7 @@ client.addListener('message', function(from, channel, message) {
                 coin.getBalance(from.toLowerCase(), settings.coin.min_confirmations, function(err, balance) {
                     if (err) {
                     	locks[from.toLowerCase()] = null;
-                        winston.error('Error in !pimp command.', err);
+                        winston.error('Error in !tip command.', err);
                         client.say(channel, settings.messages.error.expand({
                             name: from
                         }));
@@ -675,7 +675,7 @@ client.addListener('message', function(from, channel, message) {
                         coin.send('move', from.toLowerCase(), to.toLowerCase(), amount, function(err, reply) {
                         	locks[from.toLowerCase()] = null;
                         	if (err || !reply) {
-                                winston.error('Error in !pimp command', err);
+                                winston.error('Error in !tip command', err);
                                 client.say(channel, settings.messages.error.expand({
                                     name: from
                                 }));

@@ -1,22 +1,22 @@
-# Node PIMP Bot - PimpCash
+# Node TIP Bot - OKCash
 -----------------------
 
 # Changes
 #### Added Bleutrade and Cryptonator.
-#### Configured for PimpCash http://www.pimpcash.me/
+#### Configured for OKCash http://www.okcash.co/
 ###Join us at:
 ```
-irc.freenode.org #pimpcash
+irc.freenode.org #okcash
 ```
 
 # Donations
 * BTC `1CNcko4ppGe7P3oJDZW98Cn7Vtpo19korc`
-* PIMP `PVW3MoRApp5kyZekyoepwHxdb9F8vW2oPh`
+* OK `PVW3MoRApp5kyZekyoepwHxdb9F8vW2oPh`
 
 # Installation
 To install node-tip-bot simply clone this repo and install dependencies:
 ```bash
-git clone https://github.com/pimpcashdev/node-tip-bot
+git clone https://github.com/oktoshi/node-tip-bot
 cd node-tip-bot
 npm install
 ```
@@ -54,7 +54,7 @@ Logging settings.
 ## rpc
 JSON RPC API connection info.
 * **host** - JSON RPC API hostname
-* **port** - API port (for pimpcash)
+* **port** - API port (for okcash)
 * **user** - API username
 * **pass** - API password (keep that secure)
 
@@ -65,8 +65,8 @@ Basic coin settings.
 * **min_confirmations** - minimum amount of confirmations needed to tip/withdraw coins
 * **min_tip** - minimum amount of coins to tip
 * **min_rain** - minimum amount of coins to make rain
-* **short_name** - short coin's name (eg. `PIMP`)
-* **full_name** - full coin's name (eg. `PimpCash`)
+* **short_name** - short coin's name (eg. `OK`)
+* **full_name** - full coin's name (eg. `OKCash`)
 
 ## git
 Basic git settings.
@@ -136,7 +136,7 @@ Enable or Disable the bot from saying btc price ticker with !btc.
 
 ## bleutrade
 * Options none
-  * `url: https://bleutrade.com/api/v2/public/getmarketsummary?market=PIMP_BTC` Dont touch this link
+  * `url: https://bleutrade.com/api/v2/public/getmarketsummary?market=OK_BTC` Dont touch this link
 
 ## cryptonator
 * Options none

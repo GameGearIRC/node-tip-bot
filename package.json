@@ -1,7 +1,7 @@
 {
-  "name": "node-pimp-bot",
+  "name": "node-tip-bot",
   "version": "1.0.1",
-  "description": "node.js based tipping bot for pimpcash",
+  "description": "node.js based tipping bot for okcash",
   "main": "bin/tipbot",
   "dependencies": {
     "irc": "~0.3.6",
@@ -23,17 +23,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pimpcashdev/node-pimp-bot"
+    "url": "https://github.com/oktoshi/node-tip-bot"
   },
   "author": "upgradeadvice - forked from https://github.com/upgradeadvice/node-tip-bot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pimpcashdev/node-pimp-bot/issues"
+    "url": "https://github.com/oktoshi/node-tip-bot/issues"
   },
-  "homepage": "https://github.com/pimpcashdev/node-pimp-bot",
+  "homepage": "https://github.com/oktoshi/node-tip-bot",
   "keywords": [
     "altcoin",
-    "pimpcash",
+    "okcash",
     "mue",
     "node",
     "tip",
