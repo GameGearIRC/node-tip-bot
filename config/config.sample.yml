@@ -81,29 +81,29 @@ commands:
     pm: true
     channel: false
   help:
-    pm: false
+    pm: true
     channel: true
   tip:
     pm: false
     channel: true
   joke:
     pm: false
-    channel: true
+    channel: false
   random:
     pm: false
-    channel: true
+    channel: false
   ticker:
     pm: false
-    channel: true
+    channel: false
   bleutrade:
     pm: false
-    channel: true
+    channel: false
   cryptsy:
     pm: false
-    channel: true
+    channel: false
   cryptonator:
     pm: false
-    channel: true
+    channel: false
   bittrex:
     pm: false
     channel: true
@@ -115,7 +115,7 @@ commands:
     channel: true
     rain_on_last_active: 0 # amount in seconds. rain tips will fall only on users active within x seconds. leave 0
   balance:
-    pm: false
+    pm: true
     channel: true
   withdraw:
     pm: false
@@ -187,7 +187,7 @@ messages:
   gitpull_request:
     - '%name% %action% pull request #%number% %headref%>%baseref% %title% %url%'
   bot:
-    - '%nick% is a Node.js tipBot made by nrpatten and modded by oktoshi for OKCash and available at https://github.com/OKtoshi/node-tip-bot'
+    - '%nick% is a Node.js tipBot made by nrpatten and modded by GameGear for Espers'
   withdraw_success:
     - '%name%: %amount% %short_name% has been withdrawn from your account to %address%'
     - 'You have been charged %withdrawal_fee% %short_name% withdrawal fee.'
