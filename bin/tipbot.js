@@ -34,6 +34,7 @@ var allcoin = (settings.allcoin.url),
     bleutrade = (settings.bleutrade.url),
     cryptonator = (settings.cryptonator.url),
     btce = (settings.btc.url),
+    poloniex = (settings.poloniex.url),
     bittrex = (settings.bittrex.url),
     bittrex2 = (settings.bittrex2.url);
 
@@ -483,6 +484,27 @@ client.addListener('message', function(from, channel, message) {
                     return;
                 }
                 break;
+                case 'poloniex':
+               var polourl = 'https://poloniex.com/public?command=returnTicker';
+                 var poloprice;
+  
+                 function getPoloPrice(callback) {
+                     request(polourl, function (error, response, body) {
+                         if (!error && response.statusCode == 200) {
+                         poloprice = JSON.parse(body).BTC_GRS.last;
+                     }
+                         else {poloprice = 0.0;}
+                         poloCallback();
+                     });
+                 }
+         function poloCallback() {
+             client.say(channel, "Poloniex price: " + Number(poloprice).toFixed(8) + " BTC/GRS");
+         }
+         function getPrices() {
+             getPoloPrice(poloCallback);
+         }
+         getPrices();
+         break;
 
             case 'cryptonator':
                 if (settings.cryptonator.enabled) {
