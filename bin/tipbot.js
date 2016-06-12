@@ -34,7 +34,6 @@ var allcoin = (settings.allcoin.url),
     bleutrade = (settings.bleutrade.url),
     cryptonator = (settings.cryptonator.url),
     btce = (settings.btc.url),
-    poloniex = (settings.poloniex.url),
     bittrex = (settings.bittrex.url),
     bittrex2 = (settings.bittrex2.url);
 
