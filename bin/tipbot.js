@@ -5,7 +5,7 @@ var irc = require('irc'),
     coin = require('node-altcoin'),
     tipbot = require('node-tipbot-api'),
     webadmin = require('../lib/webadmin/app');
-var privchan = '#channelname';
+var privchan = '#grs-tip';
 var request  = require('request');
 
 // check if the config file exists
