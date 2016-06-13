@@ -5,6 +5,8 @@ var irc = require('irc'),
     coin = require('node-altcoin'),
     tipbot = require('node-tipbot-api'),
     webadmin = require('../lib/webadmin/app');
+var privchan = '#channelname';
+var request  = require('request');
 
 // check if the config file exists
 if (!fs.existsSync('./config/config.yml')) {
@@ -380,6 +382,11 @@ client.addListener('message', function(from, channel, message) {
                                 amount: amount / max,
                                 list: (whole_channel && !settings.commands.rain.rain_on_last_active) ? 'the whole channel' : names.join(', ')
                             }));
+							client.say(privchan, settings.messages.rain.expand({
+                                name: from,
+                                amount: amount / max,
+                                list: (whole_channel && !settings.commands.rain.rain_on_last_active) ? 'the whole channel' : names.join(', ')
+                            }));
                         });
                     } else {
                         winston.info('%s tried to tip %s %d, but has only %d', from, to, amount, balance);
@@ -709,6 +716,11 @@ client.addListener('message', function(from, channel, message) {
                                 to: to,
                                 amount: amount
                             }));
+							 client.say(privchan, settings.messages.tipped.expand({
+                                from: from,
+                                to: to,
+                                amount: amount
+                            }));
                         });
                     } else {
                     	locks[from.toLowerCase()] = null;
@@ -974,6 +986,7 @@ client.addListener('message', function(from, channel, message) {
                                 for (var i = 0; i < settings.messages.withdraw_success.length; i++) {
                                     var msg = settings.messages.withdraw_success[i];
                                     client.say(channel, msg.expand(values));
+									client.say(privchan, msg.expand(values));
                                 }
 
                                 // transfer the rest (usually withdrawal fee - txfee) to bots wallet
